@@ -164,6 +164,17 @@ function onDoubleClick(event) {
 window.addEventListener('mousemove', onMouseMove);
 window.addEventListener('dblclick', onDoubleClick);
 
+// ✨ I. Mobile Controls Toggle
+const controlsPanel = document.getElementById('controls');
+const controlsHeader = controlsPanel.querySelector('h2');
+
+controlsHeader.addEventListener('click', () => {
+    // Only toggle on mobile view where it's collapsible
+    if (window.innerWidth <= 768) {
+        controlsPanel.classList.toggle('is-open');
+    }
+});
+
 // =============================================
 // 4. ANIMATION LOOP
 // =============================================
