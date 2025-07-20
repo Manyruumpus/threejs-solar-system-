@@ -136,3 +136,54 @@ input:checked + .toggle-slider {
 input:checked + .toggle-slider:before {
     transform: translateX(26px);
 }
+
+/* =============================================
+   5. MOBILE RESPONSIVE STYLES
+   ============================================= */
+@media (max-width: 768px) {
+    #controls {
+        /* Reposition to the bottom */
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        /* Make it collapsible */
+        max-height: 52px; /* Height of the header */
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+
+        /* Adjust styling */
+        border-radius: 15px 15px 0 0;
+        padding: 0;
+        box-sizing: border-box; /* Ensures padding is included in width/height */
+    }
+
+    /* Style for the expanded panel */
+    #controls.is-open {
+        max-height: 80vh; /* Allow it to take up to 80% of the screen height */
+        overflow-y: auto; /* Add scrolling if content is too tall */
+    }
+
+    /* Make the title the clickable trigger */
+    #controls h2 {
+        padding: 15px;
+        margin: 0;
+        cursor: pointer; /* Show it's clickable */
+    }
+    
+    /* Add padding back to the content inside */
+    #controls > *:not(h2) {
+        padding: 0 15px;
+    }
+    #controls button {
+        margin-top: 10px;
+    }
+    #controls hr {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    #sliders-container {
+        padding-bottom: 15px; /* Add space at the bottom */
+    }
+}
